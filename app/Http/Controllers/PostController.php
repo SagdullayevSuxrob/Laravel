@@ -17,12 +17,26 @@ class PostController extends Controller
 
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|max:255',
+            'short_content' => 'required|max:255',
+            'content' => 'required',
+            'image' => 'nullable|image|max:2048',
+        ]);
+
+        $post = Post::create([
+            'title' => $request->title,
+            'short_content' => $request->short_content,
+            'content' => $request->content,
+            // 'image' => $request->file('image')->store('images', 'public')
+        ]);
+
+        return redirect()->route('posts.index');
     }
 
     public function show(Post $post)

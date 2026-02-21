@@ -1906,6 +1906,17 @@ pre code {
   text-shadow: 0 0 0 #495057;
 }
 
+.form-control.is-invalid {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.form-control.is-invalid:focus {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+
 .form-control:focus {
   color: #495057;
   background-color: #fff;
