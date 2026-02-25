@@ -23,7 +23,7 @@
                 @foreach ($posts as $post)
                     <div class="col-lg-4 col-md-6 mb-5">
                         <div class="position-relative mb-4">
-                            <img class="img-fluid rounded w-100" src="img/blog-1.jpg" alt="">
+                            <img class="img-fluid rounded w-100" src="{{ asset('storage/' . $post->photo) }}" alt="">
                             <div class="blog-date">
                                 <h4 class="font-weight-bold mb-n1">{{ $post->created_at->format('d') }}</h4>
                                 <small class="text-white text-uppercase">{{ $post->created_at->format('M') }}</small>
@@ -40,7 +40,9 @@
                     </div>
                 @endforeach
 
-                <div class="col-12">
+                {{ $posts->links() }}
+
+                {{-- <div class="col-12">
                     <nav aria-label="Page navigation">
                         <ul class="pagination pagination-lg justify-content-center mb-0">
                             <li class="page-item disabled">
@@ -60,7 +62,7 @@
                             </li>
                         </ul>
                     </nav>
-                </div>
+                </div> --}}
 
             </div>
         </div>

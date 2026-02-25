@@ -38,9 +38,11 @@
                     <div class="control-group mb-4">
                         <textarea class="form-control p-4 @error('content') is-invalid @enderror" rows="6" name="content" placeholder="@error('content'){{ $message }}@else Ma'qola @enderror">{{ old('content') }}</textarea>
                     </div>
-                    <div class="control-group">
-                        <input type="file" class="form-control p-4" name="image" placeholder="Rasm" />
-                        <p class="help-block text-danger"></p>
+                    <div class="control-group mb-4">
+                        <input name="photo" type="file" class="form-control p-4 @error('photo') is-invalid @enderror" placeholder="Rasm" />
+                        @error('photo')
+                            <p class="help-block text-danger">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div>
                         <button class="btn btn-primary btn-block py-3 px-5" type="submit">
